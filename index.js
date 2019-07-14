@@ -43,5 +43,5 @@ const countFemale = _.reduce(students, (acc, curr) => {
 console.log(`number of male: ${countMale}`);
 console.log(`number of female: ${countFemale}`);
 
-const newArray = _.map(students, 'name');
-console.log(newArray);
+const studenNames = _.map(students, 'name');
+console.log(studenNames);
