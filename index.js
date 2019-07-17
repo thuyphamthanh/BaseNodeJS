@@ -17,7 +17,7 @@ const students = [
        gender: 'female',
      },
      {
-       name: 'An',
+       name: 'Thuy',
        age: 20,
        gender: 'male',
      },
@@ -26,22 +26,26 @@ const students = [
        age: 27,
        gender: 'male',
      },
+     {
+      name: 'Thuy',
+      age: 27,
+      gender: '',
+    },
+    {
+      name: 'An',
+      age: 27,
+      gender: 'female',
+    },
    ];
 
-const countMale = _.reduce(students, function(acc, curr) {
-     if (curr.gender === 'male')
-          acc += 1;
-     return acc;
-}, 0);
+function countByType(type){
+  return _.reduce(students, (count, student) => {
+    count[student[type]] = count[student[type]] ? count[student[type]]+1 : 1;
+    return count;
+  }, {});
+}
 
-const countFemale = _.reduce(students, (acc, curr) => {
-     if (curr.gender === 'female')
-          acc += 1;
-     return acc;
-},0);
+console.log(countByType('gender'));
 
-console.log(`number of male: ${countMale}`);
-console.log(`number of female: ${countFemale}`);
-
-const newArray = _.map(students, 'name');
-console.log(newArray);
+const stundenNames = _.map(students, 'name');
+console.log(stundenNames);
